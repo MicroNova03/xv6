@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
   // to a particular character in this storage.
   char buf[512], *b;
   // Point b to the first character in the line.
-  b = &buf[0];
+  b = buf;
 
   // Read characters from the standard input. When we find '\n' that
   // means one line has terminated - execute the command.
