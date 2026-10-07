@@ -9,9 +9,10 @@ void execute_line(char** args) {
   // run wait() if it is a parent.
   // For guidance, the model solution has 9 lines of code.
   int pid = fork();
-  if (pid < 2) {
+  if (pid < 0) {
     fprintf(2, "fork failed\n");
-  } if (pid == 0) {
+  } 
+  if (pid == 0) {
     exec(args[0], args);
     fprintf(2, "exec failed\n");
     exit(1);
@@ -41,7 +42,7 @@ int main(int argc, char *argv[]) {
     // For guidance, the model solution has 10 lines of code in this loop.
     if (*b == '\n') {
       *b = '\0';
-      if (strcmp(buf, 'q') == 0) {
+      if (strcmp(buf, "q") == 0) {
         exit(0);
       }
       args[0] = buf;
